@@ -1,7 +1,10 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
-
+import Dashboard from "./views/Dashboard.vue";
+import Campaigns from "./views/Campaigns.vue";
+import Apps from "./views/Apps.vue";
+import Settings from "./views/Settings.vue";
+//import Campaigns from "./views/Campaigns.vue";
 Vue.use(Router);
 
 export default new Router({
@@ -10,17 +13,28 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "home",
-      component: Home
+      name: "dashboard",
+      component: Dashboard
     },
     {
-      path: "/about",
-      name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
+      path: "/campaigns",
+      name: "Campaigns",
+      component: Campaigns
+    },
+    {
+      path: "/apps",
+      name: "Apps",
+      component: Apps
+    },
+    {
+      path: "/settings",
+      name: "Settings",
+      component: Settings
+    },
+    {
+      path: "/campaigns",
+      name: "Campaigns",
+      component: Campaigns
     }
   ]
 });
