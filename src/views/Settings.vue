@@ -1,5 +1,3 @@
 <template>
-    <div class="settings">
-        
-    </div>
+  <div class="settings"></div>
 </template>

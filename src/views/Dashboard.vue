@@ -1,10 +1,6 @@
 <template>
-  <div class="dashboard">
-    
-  </div >
+  <div class="dashboard"></div>
 </template>
 <script>
-export default {
-  
-}
+export default {};
 </script>

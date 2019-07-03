@@ -1,7 +1,10 @@
 <template>
     <div class="CampaignsTable">
     <v-container >
-        <h1 class="heading grey--text"> the campaigns page </h1>
+       <v-layout row wrap>
+           <h1 class="heading grey--text"> the campaigns page </h1>
+          <AddCampaignForm />
+       </v-layout> 
         <v-card  v-for="campaign in campaigns" :key="campaign.title" class="ma-3">
             <v-layout row wrap class="pa-3">
              <v-flex xs6 sm4 md2 >
@@ -36,7 +39,11 @@
     </div>
 </template>
 <script>
+import AddCampaignForm from './AddCampaignForm'
 export default {
+      components: {
+    AddCampaignForm
+  },
     data(){
         return{
             campaigns:[
