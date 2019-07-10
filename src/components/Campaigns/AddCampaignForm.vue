@@ -6,44 +6,33 @@
       </template>
       <v-card>
         <v-card-title>
-          <span class="headline">User Profile</span>
+          <span class="headline">Add Campaign</span>
         </v-card-title>
         <v-card-text>
           <v-container grid-list-md>
             <v-layout wrap>
-              <v-flex xs12 sm6 md4>
-                <v-text-field label="Legal first name*" required></v-text-field>
+              <v-flex xs12>
+                <v-text-field label="Campaign Name*" required></v-text-field>
               </v-flex>
-              <v-flex xs12 sm6 md4>
-                <v-text-field label="Legal middle name" hint="example of helper text only on focus"></v-text-field>
+              <v-flex xs12 sm6>
+                <v-autocomplete :items="apps" label="App*" required></v-autocomplete>
               </v-flex>
-              <v-flex xs12 sm6 md4> 
+              <v-flex xs12 sm6>
+                <v-autocomplete :items="channels" label="Channel"></v-autocomplete>
+              </v-flex>
+              <v-flex xs12>
                 <v-text-field
-                  label="Legal last name*"
-                  hint="example of persistent helper text"
-                  persistent-hint
+                  label="URL*"
                   required
+                  hint="App URL: https://www.App-URL.com?parm1=XXX..."
+                  persistent-hint
                 ></v-text-field>
               </v-flex>
-              <v-flex xs12>
-                <v-text-field label="Email*" required></v-text-field>
-              </v-flex>
-              <v-flex xs12>
-                <v-text-field label="Password*" type="password" required></v-text-field>
+              <v-flex xs12 sm6>
+                <v-text-field label="CPA Price*" hint="In USD" persistent-hint required></v-text-field>
               </v-flex>
               <v-flex xs12 sm6>
-                <v-select
-                  :items="['0-17', '18-29', '30-54', '54+']"
-                  label="Age*"
-                  required
-                ></v-select>
-              </v-flex>
-              <v-flex xs12 sm6>
-                <v-autocomplete
-                  :items="['Skiing', 'Ice hockey', 'Soccer', 'Basketball', 'Hockey', 'Reading', 'Writing', 'Coding', 'Basejump']"
-                  label="Interests"
-                  multiple
-                ></v-autocomplete>
+                <v-text-field name="status" label="Status" id="id"></v-text-field>
               </v-flex>
             </v-layout>
           </v-container>
@@ -60,8 +49,11 @@
 </template>
 <script>
 export default {
-        data: () => ({
-      dialog: false
-    })
-  } 
+  data() {
+    return {
+      apps: ["App1", "App2", "App3"],
+      channels: ["Channel1", "Channel2", "Channel3"]
+    };
+  }
+};
 </script>
